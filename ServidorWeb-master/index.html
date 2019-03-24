@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Servidor-Web</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h3>¡Bienvenidos!</h3><br><br><p style="text-align:left">Esta es una breve presentación sobre el servidor web con Apache de Ángel Durán y Adrián Anselmo, alumnos de ASIR.</p>
+				<br><img src="images/logoapache.png" width="400px" height="200px">
+				</section>
+				<section style="text-align:left"><h2>ÍNDICE</h2> <br><br>
+						1. Definición de servidor web<br>
+						2. Instalación de servidor apache en Debian<br>
+						3. Modificar la pagina de inicio de nuestro servidor<br>
+						4. Abrir puertos del router<br>
+						5. Darse de alta en un servidor DNS<br>
+						6. Acceso desde el exterior<br>
+						7. Referencias
+				</section>
+				<section><h2>Definición de servidor web</h2><br>
+				<p style="text-align:left">Un servidor Web es un programa que utiliza el protocolo de transferencia de hiper texto, HTTP, para servir los archivos que forman páginas web a los usuarios, en respuesta a sus solicitudes, que son reenviados por los clientes HTTP de sus equipos.</p>
+				</section>
+				<section><h2>Instalación de servidor apache en Debian</h2><br>
+				<p style="text-align:left">- Primeramente, como root, deberemos actualizar los repositorios (recomendable) con un <i>apt-get update</i> y un <i>apt-get upgrade</i>, todo esto dando por hecho que los repositorios de nuestro equipo están correctos.<br><br>
+				- Una vez realizado este paso, ejecutamos el comando <i>apt-get install apache2</i> (que es el nombre del paquete de apache).<br>
+				</p>
+				</section>
+				<section><h2>Instalación de servidor apache en Debian</h2><br>
+				<p style="text-align:left">- Una vez lo tengamos instalado, con teclear en nuestro navegador "localhost" ya podríamos acceder a nuestro servidor web.<br><br>
+				¡Así de sencillo!</p>
+				</section>
+				<section><h2>Modificar la pagina de inicio de nuestro servidor web</h2><br>
+				<p style="text-align:left">
+				Para modificar la página de inicio de nuestro servidor, bastará con modificar el archivo llamado <i>index.html</i> que encontraremos en nuestro equipo (Debian) en la ruta <i>/var/www/html</i> 
+				</p>
+				</section>
+				<section><h2>Abrir puertos del router</h2>
+				<br><p style="text-align:left">Para que las conexiones externas puedan entrar a nuestro servidor web, será necesario que accedamos a nuestro router (normalmente introduciendo en un navegador la IP de puerta de enlace) y abramos el puerto 80.<br>
+				</p>
+				</section>
+				<section><h2>Abrir puertos del router</h2>
+				<img src="images/1.PNG" width="500px" height="250px" style="float:left">
+				<img src="images/2.PNG" width="250px" height="250px" style="float:right">
+				<img src="images/4.PNG" width="500px" height="250px" style="float:center">
+				</section>
+				<section><h2>Darse de alta en un servidor DNS</h2>
+				<p style="text-align:left">Una vez abiertos los puertos, desde el exterior se podría acceder a nuestro servidor web poniendo nuestra IP pública en un navegador.<br>
+				Sin embargo, para hacerlo más sencillo, nos daremos de alta en un servicio DNS que nos relacione nuestra IP pública a un dominio.</p>
+				</section>
+				<section><h2>Darse de alta en un servidor DNS</h2>
+				<p style="text-align:left">En nuestro caso utilizamos el dominio trabajoiso.ddns.net</p>
+				<img src="images/3.PNG" width="800px" height="300px" style="float:center">
+				</section>
+				<section><h2>Acceso desde el exterior</h2>
+				<p style="text-align:left">Una vez llegados a este punto, procederemos a acceder a nuestro servidor web.<br>
+				Para ello iremos al navegador e introduciremos: <br><br> <i>trabajoiso.ddns.net</i></p>
+				</section>
+				<section><h2>Referencias</h2><br>
+				<p style="text-align:left">
+				<a href="https://searchdatacenter.techtarget.com/es/definicion/Servidor-Web">https://searchdatacenter.techtarget.com</a>
+				<a href="https://www.noip.com/">https://www.noip.com</a>
+				</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
